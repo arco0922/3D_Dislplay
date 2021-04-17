@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>3D Display</title>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js"></script>
+	<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+	
+	<script src="app.js"></script>
+</head>
+<style>
+	* {
+		margin: 0;
+		overflow: hidden;
+	}
+	body {
+		position: relative;
+	}
+	#wrapper {
+		width: 100vw;
+		height: 100vh;
+	}
+	.centered {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: 999;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color:white;
+		text-align: center;
+		font-size:18px;
+	}
+</style>
+<body>
+	<div id="wrapper"></div>
+	<div class="centered">
+		<h1 id="loadexp">Loading...<br>
+			Please wait a moment...<br><br>
+			To enjoy this page,<br> don't forget to make this window full screen</h1>
+	</div>
+</body>
+
+</html>
