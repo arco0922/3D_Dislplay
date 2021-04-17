@@ -1,4 +1,4 @@
-# 3D disply without 3d glasses
+# 3D display (without the need for 3D glasses)
 I made 3d web page which you can enjoy without wearing 3d glasses.
 
 This page uses the webcam of your pc and recognizes the position of your face using "facemesh"(ml5.js), and then calculates the position of the viewpoint and the projection matrix to make the page look like 3D from the position of your face.
@@ -7,6 +7,6 @@ So, to enjoy this page, make sure that your pc's webcam is just above the displa
 
 ↓You can access to the page↓
 
-[https://arco0922.github.io/FuturePrediction/](https://arco0922.github.io/FuturePrediction/)
+[https://arco0922.github.io/3D_Display/](https://arco0922.github.io/3D_Display/)
 
-![Thumbnail](https://user-images.githubusercontent.com/52741042/114958709-8c40a400-9e9e-11eb-8244-9cc53a00d2fb.PNG)
+![webversion](https://user-images.githubusercontent.com/52741042/115099913-1149bd00-9f74-11eb-92c9-c87479be094d.jpg)
