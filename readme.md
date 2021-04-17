@@ -10,3 +10,6 @@ So, to enjoy this page, make sure that your pc's webcam is just above the displa
 [https://arco0922.github.io/3D_Display/](https://arco0922.github.io/3D_Display/)
 
 ![webversion](https://user-images.githubusercontent.com/52741042/115099913-1149bd00-9f74-11eb-92c9-c87479be094d.jpg)
+
+# reference
+[運動視差を利用した立体映像の描画](http://tfujiwar.hatenablog.com/entry/2018/05/05/130000)
