@@ -66,8 +66,8 @@ function drawBoundingBox() {
     const bottomRight = predictions[0].boundingBox.bottomRight[0];
     cx = (-(topLeft[0]+bottomRight[0])/2+320)*width/640;
     cy = ((7*topLeft[1]+5*bottomRight[1])/12-240)*height/480;  
-    cx = oldx * 0.8 + cx * 0.2;
-    cy = oldy * 0.8 + cy * 0.2;
+    cx = oldx * 0.2 + cx * 0.8;
+    cy = oldy * 0.2 + cy * 0.8;
     oldx = cx;
     oldy = cy;
   }
