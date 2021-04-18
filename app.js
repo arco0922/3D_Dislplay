@@ -2,25 +2,35 @@ let facemesh;
 let video;
 let predictions = [];
 
+let capture_w,capture_h;
+
 let cx,cy,oldx,oldy;
 let sx,sy,sz;
 const spherenum = 100;
 
 let msg;
+let topLeft,bottomRight;
 
 function setup() {
   const mycnv = createCanvas(innerWidth,innerHeight,WEBGL);
   mycnv.parent('#wrapper');
   video = createCapture(VIDEO);
-  video.size(640, 480);
+  capture_w = 640;
+  capture_h = 480;
+  video.size(capture_w, capture_h);
+
+  topLeft = null;
+  bottomRight = null;
 
   facemesh = ml5.facemesh(video, modelReady);
 
   // This sets up an event that fills the global variable "predictions"
   // with an array every time new predictions are made
   facemesh.on("predict", results => {
-    predictions = results;
-    //console.log(predictions);
+    if (results.length>0) {
+      topLeft = results[0].boundingBox.topLeft[0];
+      bottomRight = results[0].boundingBox.bottomRight[0];
+    }
   });
 
   // Hide the video element, and just show the canvas
@@ -58,14 +68,13 @@ function draw() {
 
 // A function to draw ellipses over the detected keypoints
 function drawBoundingBox() {
-  if (predictions.length>0) {
+  if (topLeft!=null && bottomRight!=null) {
     if (msg.textContent!=='') {
       msg.textContent = '';
     }
-    const topLeft = predictions[0].boundingBox.topLeft[0];
-    const bottomRight = predictions[0].boundingBox.bottomRight[0];
-    cx = (-(topLeft[0]+bottomRight[0])/2+320)*width/640;
-    cy = ((7*topLeft[1]+5*bottomRight[1])/12-240)*height/480;  
+    
+    cx = (-(topLeft[0]+bottomRight[0])/2+capture_w/2)*width/capture_w;
+    cy = ((7*topLeft[1]+5*bottomRight[1])/12-capture_h/2)*height/capture_h;  
     cx = oldx * 0.2 + cx * 0.8;
     cy = oldy * 0.2 + cy * 0.8;
     oldx = cx;
